@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttergroupui/view/check_out/check_out.dart';
+
+import 'package:fluttergroupui/view/home_screen/home_screen.dart';
 
 void main() {
   runApp(Mainscreen());
@@ -10,6 +11,6 @@ class Mainscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Checkout());
+    return const MaterialApp(home: Homescreen());
   }
 }

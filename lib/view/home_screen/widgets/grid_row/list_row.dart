@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Gridrow extends StatelessWidget {
-  const Gridrow({super.key});
+class Listrow extends StatelessWidget {
+  const Listrow({super.key});
 
   @override
   Widget build(BuildContext context) {

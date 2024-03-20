@@ -67,7 +67,7 @@ class Homescreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Gridrow(),
+                      Listrow(),
                     ],
                   );
                 },
