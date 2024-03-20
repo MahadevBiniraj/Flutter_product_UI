@@ -168,6 +168,9 @@ class Productdetails extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 10,
+          ),
           // two buttons in row
           Row(
             children: [
