@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fluttergroupui/controller/product_list_controller/productList.dart';
 import 'package:fluttergroupui/core/color_constants/colorconstants.dart';
 
 class Productdetails extends StatelessWidget {
@@ -134,16 +135,16 @@ class Productdetails extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              "Brand",
+                              Productlistcontroller.productList[index].maintext,
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w500),
                             ),
                             SizedBox(
-                              width: 50,
+                              width: 80,
                             ),
                             Text(
-                              "Red Label",
+                              Productlistcontroller.productList[index].subtext,
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                           ],
