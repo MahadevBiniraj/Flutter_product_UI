@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:fluttergroupui/controller/product_list_controller/productList.dart';
 import 'package:fluttergroupui/core/color_constants/colorconstants.dart';
 import 'package:fluttergroupui/model/List2_model/List2_model.dart';
+import 'package:fluttergroupui/view/check_out/check_out.dart';
 
 class Productdetails extends StatelessWidget {
   const Productdetails({super.key, required this.model});
@@ -191,20 +192,29 @@ class Productdetails extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: 50,
-                width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: colorconstants.green,
-                ),
-                child: Center(
-                  child: Text(
-                    "ADD TO CART",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: colorconstants.white),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Checkout(),
+                      ));
+                },
+                child: Container(
+                  height: 50,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: colorconstants.green,
+                  ),
+                  child: Center(
+                    child: Text(
+                      "ADD TO CART",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: colorconstants.white),
+                    ),
                   ),
                 ),
               ),
