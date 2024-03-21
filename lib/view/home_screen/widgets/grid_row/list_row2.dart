@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttergroupui/controller/List2_controller.dart';
 import 'package:fluttergroupui/core/color_constants/colorconstants.dart';
+import 'package:fluttergroupui/model/List2_model/List2_model.dart';
 import 'package:fluttergroupui/view/product_details/productdetails.dart';
 
 class Row2 extends StatelessWidget {
-  const Row2({super.key});
-
+  const Row2({super.key, required this.listmodel});
+  final List2model listmodel;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -34,8 +36,7 @@ class Row2 extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
-                          image: NetworkImage(
-                              "https://cdn.grofers.com/app/images/products/sliding_image/111483a.jpg?ts=1679656154"),
+                          image: NetworkImage(listmodel.propic),
                           fit: BoxFit.cover)),
                 )
               ],
@@ -62,7 +63,7 @@ class Row2 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Redlabel Tea Leaf,",
+                  listmodel.textname,
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                 ),
                 Text(
@@ -72,7 +73,7 @@ class Row2 extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "\$12",
+                      listmodel.price,
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
                     ),
@@ -80,7 +81,7 @@ class Row2 extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      "5% 0ff",
+                      listmodel.priceoff,
                       style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w700,

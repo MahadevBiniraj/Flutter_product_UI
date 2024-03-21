@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:fluttergroupui/model/List1_model/List1.dart';
+
 class Listrow extends StatelessWidget {
-  const Listrow({super.key});
+  const Listrow({super.key, required this.listmodel});
+  final List1 listmodel;
 
   @override
   Widget build(BuildContext context) {
@@ -13,16 +16,14 @@ class Listrow extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
-                image: NetworkImage(
-                    "https://static.vecteezy.com/system/resources/previews/012/843/767/large_2x/fresh-fruits-and-vegetables-on-grey-background-healthy-eating-concept-flat-lay-copy-space-photo.jpg"),
-                fit: BoxFit.cover)),
+                image: NetworkImage(listmodel.propic), fit: BoxFit.cover)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "fruits",
+                listmodel.text,
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
               ),
             ),

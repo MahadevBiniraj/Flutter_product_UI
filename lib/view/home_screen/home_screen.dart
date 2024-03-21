@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fluttergroupui/controller/List1_controller/List1_controller.dart';
+import 'package:fluttergroupui/controller/List2_controller.dart';
 import 'package:fluttergroupui/core/color_constants/colorconstants.dart';
 import 'package:fluttergroupui/view/home_screen/widgets/grid_row/list_row.dart';
 import 'package:fluttergroupui/view/home_screen/widgets/grid_row/list_row2.dart';
@@ -61,13 +63,15 @@ class Homescreen extends StatelessWidget {
               height: 120,
               width: double.infinity,
               child: ListView.builder(
-                itemCount: 7,
+                itemCount: List1controller.myList.length,
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Listrow(),
+                      Listrow(
+                        listmodel: List1controller.myList[index],
+                      ),
                     ],
                   );
                 },
@@ -89,7 +93,12 @@ class Homescreen extends StatelessWidget {
                 itemCount: 5,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return Row2();
+                  return InkWell(
+                    onTap: ,
+                    child: Row2(
+                      listmodel: List2controller.myList[index],
+                    ),
+                  );
                 },
               ),
             ),

@@ -134,18 +134,21 @@ class Productdetails extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
-                            Text(
-                              Productlistcontroller.productList[index].maintext,
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w500),
+                            Expanded(
+                              child: Text(
+                                Productlistcontroller
+                                    .productList[index].maintext,
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500),
+                              ),
                             ),
-                            SizedBox(
-                              width: 80,
-                            ),
-                            Text(
-                              Productlistcontroller.productList[index].subtext,
-                              style: TextStyle(fontWeight: FontWeight.w500),
+                            Expanded(
+                              child: Text(
+                                Productlistcontroller
+                                    .productList[index].subtext,
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
                             ),
                           ],
                         ),
