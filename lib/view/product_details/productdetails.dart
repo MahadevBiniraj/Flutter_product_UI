@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fluttergroupui/controller/product_list_controller/productList.dart';
 import 'package:fluttergroupui/core/color_constants/colorconstants.dart';
+import 'package:fluttergroupui/model/List2_model/List2_model.dart';
 
 class Productdetails extends StatelessWidget {
-  const Productdetails({super.key});
+  const Productdetails({super.key, required this.model});
+  final List2model model;
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +41,7 @@ class Productdetails extends StatelessWidget {
                         width: 100,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: NetworkImage(
-                                    "https://cdn.grofers.com/app/images/products/sliding_image/111483a.jpg?ts=1679656154"),
+                                image: NetworkImage(model.propic),
                                 fit: BoxFit.cover)),
                       ),
                     )
@@ -53,7 +54,7 @@ class Productdetails extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        "Red Label Tea",
+                        model.textname,
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.w500),
                       ),
@@ -65,7 +66,7 @@ class Productdetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "4.2",
+                              model.rating,
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   color: colorconstants.white),
@@ -79,14 +80,14 @@ class Productdetails extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text("\$12",
+                          Text(model.price,
                               style: TextStyle(
                                   fontSize: 25, fontWeight: FontWeight.w700)),
                           SizedBox(
                             width: 10,
                           ),
                           Text(
-                            "5% 0ff",
+                            model.priceoff,
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w700,
@@ -127,7 +128,7 @@ class Productdetails extends StatelessWidget {
                   ),
                   // using listviewbuilder
                   ListView.builder(
-                    itemCount: 6,
+                    itemCount: model.productname.length,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return Padding(
@@ -136,8 +137,7 @@ class Productdetails extends StatelessWidget {
                           children: [
                             Expanded(
                               child: Text(
-                                Productlistcontroller
-                                    .productList[index].maintext,
+                                model.productname[index],
                                 style: TextStyle(
                                     color: Colors.grey,
                                     fontWeight: FontWeight.w500),
@@ -145,8 +145,7 @@ class Productdetails extends StatelessWidget {
                             ),
                             Expanded(
                               child: Text(
-                                Productlistcontroller
-                                    .productList[index].subtext,
+                                model.productvalue[index],
                                 style: TextStyle(fontWeight: FontWeight.w500),
                               ),
                             ),

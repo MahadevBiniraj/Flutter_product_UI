@@ -6,6 +6,7 @@ import 'package:fluttergroupui/controller/List2_controller.dart';
 import 'package:fluttergroupui/core/color_constants/colorconstants.dart';
 import 'package:fluttergroupui/view/home_screen/widgets/grid_row/list_row.dart';
 import 'package:fluttergroupui/view/home_screen/widgets/grid_row/list_row2.dart';
+import 'package:fluttergroupui/view/product_details/productdetails.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -94,7 +95,15 @@ class Homescreen extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: ,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Productdetails(
+                              model: List2controller.myList[index],
+                            ),
+                          ));
+                    },
                     child: Row2(
                       listmodel: List2controller.myList[index],
                     ),
